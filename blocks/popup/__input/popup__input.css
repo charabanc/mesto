@@ -1,0 +1,19 @@
+.popup__input{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  max-width: 358px;
+  min-height: 27px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  color: #000000;
+  margin: 0 0 30px;
+}
+.popup__input:last-child{
+  margin-bottom: 0;
+}
+.popup__input:focus{
+  border: 1px solid #39c;
+}

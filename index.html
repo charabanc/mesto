@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto</title>
+  </head>
+  <body class="wrapper">
+    <div class="container">
+      <header class="header">
+        <img src="./images/header__logo.svg" alt="логотип шапки" class="header__logo">
+      </header>
+      <section class="profile">
+        <div class="profile__info">
+          <img src="./images/profile__avatar.jpg" alt="аватарка профиля" class="profile__avatar">
+          <div class="prifile__text">
+            <h1 class="profile__name">
+              <span class="profile__name_text">Жак-Ив Кусто</span>
+              <img src="./images/button__edit.svg" alt="кнопа редоктирования" class="button__edit">
+            </h1>
+            <p class="profile__status">Исследователь океана</p>
+          </div>  
+        </div>
+        <img src="./images/button__add.svg" alt="кнопка добавления" class="button__add">
+      </section>
+      <section class="cards">
+        <div class="card">
+          <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
+          <div class="card__item">
+            <p class="card__paragraph">Карачаевск</p>
+            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon iconActive">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
+          <div class="card__item">
+            <p class="card__paragraph">Гора Эльбрус</p>
+            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
+          <div class="card__item">
+            <p class="card__paragraph">Домбай</p>
+            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
+          <div class="card__item">
+            <p class="card__paragraph">Гора Эльбрус</p>
+            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
+          <div class="card__item">
+            <p class="card__paragraph">Домбай</p>
+            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
+          <div class="card__item">
+            <p class="card__paragraph">Карачаево-Черкесия</p>
+            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          </div>
+        </div>
+      </section>
+      <section class="footer">
+        <p class="footer__copyright">@2021 Mesto Ruusia</p>
+      </section>
+    </div>
+    <section class="popup">
+      <form class="popup__container">
+        <img src="./images/CloseIcon.png" alt="крестик для скрытия" class="popup__closeIcon">
+        <h1 class="popup__title">Редактировать профиль</h1>
+        <input type="text" class="popup__input nameInput">
+        <input type="text" class="popup__input jobInput">
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>
+      <div class="popup__overlay"></div>
+    </section>
+  </body>
+  <script src="./script/script.js"></script>
+</html>
