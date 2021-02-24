@@ -1,4 +1,4 @@
-const buttonEdit = document.querySelector('.button__edit');
+const buttonEdit = document.querySelector('.profile__btn-edit');
 const popup = document.querySelector('.popup');
 
 const closeIcon = document.querySelector('.popup__closeIcon');
@@ -7,8 +7,8 @@ const formElement = document.querySelector('.popup__container');
 const nameInput = document.querySelector('.nameInput');
 const jobInput = document.querySelector('.jobInput');
 
-const profileName = document.querySelector('.profile__name_text');
-const profileStatus = document.querySelector('.profile__status');
+const profileName = document.querySelector('.profile__info-name');
+const profileStatus = document.querySelector('.profile__info-data');
 
 buttonEdit.addEventListener( 'click', function(){
   popup.classList.add('shown');

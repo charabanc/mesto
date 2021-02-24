@@ -8,14 +8,12 @@
 /* Блок Profile*/
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
-@import url(../blocks/profile/__text/profile__text.css);
 @import url(../blocks/profile/__info/profile__info.css);
-@import url(../blocks/profile/__title/profile__title.css);
-@import url(../blocks/profile/__name/profile__name.css);
-@import url(../blocks/profile/__status/profile__status.css);
-@import url(../blocks/button/button.css);
-@import url(../blocks/button/__edit/button__edit.css);
-@import url(../blocks/button/__add/button__add.css);
+@import url(../blocks/profile/__info_no-wrap/profile__info_no-wrap.css);
+@import url(../blocks/profile/__info-name/profile__info-name.css);
+@import url(../blocks/profile/__btn-edit/profile__btn-edit.css);
+@import url(../blocks/profile/__info-data/profile__info-data.css);
+@import url(../blocks/profile/__btn-add/profile__btn-add.css);
 /* Блок Cards*/
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/card/card.css);

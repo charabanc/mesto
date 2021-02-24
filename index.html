@@ -12,19 +12,21 @@
       <header class="header">
         <img src="./images/header__logo.svg" alt="логотип шапки" class="header__logo">
       </header>
+
+
       <section class="profile">
+        <img src="./images/profile__avatar.jpg" alt="аватарка профиля" class="profile__avatar">
         <div class="profile__info">
-          <img src="./images/profile__avatar.jpg" alt="аватарка профиля" class="profile__avatar">
-          <div class="prifile__data">
-            <h1 class="profile__title">
-              <span class="profile__name">Жак-Ив Кусто</span>
-              <img src="./images/button__edit.svg" alt="кнопа редоктирования" class="button button__edit">
-            </h1>
-            <p class="profile__status">Исследователь океана</p>
-          </div>  
+          <span class="profile__info_no-wrap">
+            <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+            <input type="image" class="profile__btn-edit" alt="" src="./images/profile__btn-edit.svg">
+          </span>
+          <p class="profile__info-data">Исследователь океана</p>
         </div>
-        <img src="./images/button__add.svg" alt="кнопка добавления" class="button button__add">
+        <input type="image" class="profile__btn-add" alt="кнопка редоктировать" src="./images/profile__btn-add.png">
       </section>
+
+
       <section class="cards">
         <div class="card">
           <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
