@@ -12,79 +12,79 @@
       <header class="header">
         <img src="./images/header__logo.svg" alt="логотип шапки" class="header__logo">
       </header>
-
-
-      <section class="profile">
-        <img src="./images/profile__avatar.jpg" alt="аватарка профиля" class="profile__avatar">
-        <div class="profile__info">
-          <span class="profile__info-nowrap">
-            <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-            <input type="image" class="profile__btn-edit" alt="" src="./images/profile__btn-edit.svg">
-          </span>
-          <p class="profile__info-data">Исследователь океана</p>
-        </div>
-        <input type="image" class="profile__btn-add" alt="кнопка редоктировать" src="./images/profile__btn-add.png">
-      </section>
-
-
-      <section class="cards">
-        <div class="card">
-          <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
-          <div class="card__item">
-            <p class="card__paragraph">Карачаевск</p>
-            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon iconActive">
+      <main class="main">
+        <section class="profile">
+          <img src="./images/profile__avatar.jpg" alt="аватарка профиля" class="profile__avatar">
+          <div class="profile__info">
+            <div class="profile__info-nowrap">
+              <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+              <button class="profile__btn-edit" type="button"></button>
+            </div>
+            <p class="profile__info-data">Исследователь океана</p>
           </div>
-        </div>
-        <div class="card">
-          <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
-          <div class="card__item">
-            <p class="card__paragraph">Гора Эльбрус</p>
-            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          <button class="profile__btn-add" type="button"></button>
+        </section>
+        <section class="cards">
+          <div class="card">
+            <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
+            <div class="card__item">
+              <h2 class="card__paragraph">Карачаевск</h2>
+              <button class="card__icon" type="button"></button>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
-          <div class="card__item">
-            <p class="card__paragraph">Домбай</p>
-            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          <div class="card">
+            <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
+            <div class="card__item">
+              <h2 class="card__paragraph">Гора Эльбрус</h2>
+              <button class="card__icon" type="button"></button>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
-          <div class="card__item">
-            <p class="card__paragraph">Гора Эльбрус</p>
-            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          <div class="card">
+            <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
+            <div class="card__item">
+              <h2 class="card__paragraph">Домбай</h2>
+              <button class="card__icon" type="button"></button>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
-          <div class="card__item">
-            <p class="card__paragraph">Домбай</p>
-            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          <div class="card">
+            <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
+            <div class="card__item">
+              <h2 class="card__paragraph">Гора Эльбрус</h2>
+              <button class="card__icon" type="button"></button>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
-          <div class="card__item">
-            <p class="card__paragraph">Карачаево-Черкесия</p>
-            <img src="./images/vectorLike.svg" alt="иконка лайк" class="card__icon">
+          <div class="card">
+            <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
+            <div class="card__item">
+              <h2 class="card__paragraph">Домбай</h2>
+              <button class="card__icon" type="button"></button>
+            </div>
           </div>
-        </div>
-      </section>
-      <section class="footer">
+          <div class="card">
+            <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
+            <div class="card__item">
+              <h2 class="card__paragraph">Карачаево-Черкесия</h2>
+              <button class="card__icon" type="button"></button>
+            </div>
+          </div>
+        </section>
+      </main>  
+      <footer class="footer">
         <p class="footer__copyright">@2021 Mesto Ruusia</p>
+      </footer>
+      </div>
+      <section class="popup">
+        <div name="Редоктировать профиль" class="popup__container">
+          <div class="popup__close-icon"></div>
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form action="" class="popup__form" name="edit-profile">
+            <input type="text" class="popup__input popup__input-name" name="first-name" placeholder="Имя">
+            <input type="text" class="popup__input popup__input-job" name="jon" placeholder="О себе">
+            <button class="popup__button" type="button">Сохранить</button>
+          </form>
+          </div>
+        <div class="popup__overlay"></div>
       </section>
-    </div>
-    <section class="popup">
-      <form class="popup__container">
-        <img src="./images/CloseIcon.png" alt="крестик для скрытия" class="popup__closeIcon">
-        <h1 class="popup__title">Редактировать профиль</h1>
-        <input type="text" class="popup__input nameInput">
-        <input type="text" class="popup__input jobInput">
-        <button class="popup__button" type="submit">Сохранить</button>
-      </form>
-      <div class="popup__overlay"></div>
-    </section>
+    <script src="./script/index.js"></script>
   </body>
-  <script src="./script/script.js"></script>
 </html>

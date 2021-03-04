@@ -4,12 +4,18 @@
   max-width: 1280px;
   min-width: 320px;
   width: 100%;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Arial', sans-serif;
 }
 
 @media screen and (max-width: 1024px){
   .wrapper{
     padding: 0 20px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 425px){
+  .wrapper{
+    padding: 0;
     box-sizing: border-box;
   }
 }
