@@ -74,16 +74,17 @@
       </footer>
       </div>
       <section class="popup">
-        <div name="Редоктировать профиль" class="popup__container">
-          <div class="popup__close-icon"></div>
+        <div class="popup__container">
+          <button class="popup__close-icon"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form action="" class="popup__form" name="edit-profile">
-            <input type="text" class="popup__input popup__input-name" name="first-name" placeholder="Имя">
-            <input type="text" class="popup__input popup__input-job" name="jon" placeholder="О себе">
-            <button class="popup__button" type="button">Сохранить</button>
+          <form class="popup__form" name="edit-profile">
+            <input type="text" class="popup__input popup__input_name" name="first-name" placeholder="Имя">
+            <input type="text" class="popup__input popup__input_job" name="jon" placeholder="О себе">
+            <button class="popup__button" type="submit">Сохранить</button>
           </form>
           </div>
         <div class="popup__overlay"></div>
+        <!--- Не понимаю как сделать прозрачность без этого блока "popup__overlay" а вы просите его удалить-->
       </section>
     <script src="./script/index.js"></script>
   </body>

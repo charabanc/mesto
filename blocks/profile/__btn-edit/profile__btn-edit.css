@@ -9,6 +9,7 @@
   background-color: transparent;
   align-self: center;
   background-size: cover;
+  border: none;
 }
 .profile__btn-edit:hover{
   opacity: 0.6;
