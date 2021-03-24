@@ -1,4 +1,4 @@
-.card__icon{
+.card__like{
   cursor: pointer;
   margin: 0;
   background-image: url(../../../images/vectorLike.svg);
@@ -10,9 +10,9 @@
   width: 22px;
   height: 19px;
 }
-.card__icon:hover{
+.card__like:hover{
   opacity: 0.5;
 }
-.card__icon:focus{
+.card__like:focus{
   outline: none;
 }

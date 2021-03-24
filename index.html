@@ -24,55 +24,13 @@
           </div>
           <button class="profile__btn-add" type="button"></button>
         </section>
-        <section class="cards">
-          <div class="card">
-            <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
-            <div class="card__item">
-              <h2 class="card__paragraph">Карачаевск</h2>
-              <button class="card__icon" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
-            <div class="card__item">
-              <h2 class="card__paragraph">Гора Эльбрус</h2>
-              <button class="card__icon" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
-            <div class="card__item">
-              <h2 class="card__paragraph">Домбай</h2>
-              <button class="card__icon" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./images/mountainElbrus.jpg" alt="Картинка гора Эльбрус" class="card__image">
-            <div class="card__item">
-              <h2 class="card__paragraph">Гора Эльбрус</h2>
-              <button class="card__icon" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./images/dombay.jpg" alt="Картинка Домбай" class="card__image">
-            <div class="card__item">
-              <h2 class="card__paragraph">Домбай</h2>
-              <button class="card__icon" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./images/karachaevsk.jpg" alt="Картинка карачаевск" class="card__image">
-            <div class="card__item">
-              <h2 class="card__paragraph">Карачаево-Черкесия</h2>
-              <button class="card__icon" type="button"></button>
-            </div>
-          </div>
-        </section>
+        <section class="cards" id="cards"></section>
       </main>  
       <footer class="footer">
         <p class="footer__copyright">@2021 Mesto Ruusia</p>
       </footer>
       </div>
+
       <section class="popup">
         <div class="popup__container">
           <button class="popup__close-icon" type="submit"></button>
@@ -82,9 +40,29 @@
             <input type="text" class="popup__input popup__input_type_job" name="jon" placeholder="О себе">
             <button class="popup__button" type="submit">Сохранить</button>
           </form>
-          </div>
-        
+        </div>
       </section>
+
+      <section class="new-place">
+        <div class="new-place__container">
+          <button class="new-place__close"></button>
+          <h4 class="new-place__title">Новое место</h4>
+          <form class="new-place__form">
+            <input type="text" class="new-place__input name" name="name" placeholder="Название">
+            <input type="text" class="new-place__input link" name="link" placeholder="Ссылка на картинку">
+            <button class="new-place__button" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="opening-card">
+        <div class="opening-card__container">
+          <button class="opening-card__close"></button>
+          <img src="" alt="картинка" class="opening-card__image">
+          <h5 class="opening-card__title">Карачаевск</h5>
+        </div>
+      </section>
+
     <script src="./script/index.js"></script>
   </body>
 </html>

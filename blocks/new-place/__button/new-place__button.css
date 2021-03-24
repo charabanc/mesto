@@ -1,0 +1,25 @@
+.new-place__button{
+    background: #000000;
+    border-radius: 2px;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 0 18px;
+    margin: 0;
+    cursor: pointer;
+    min-width: 358px;
+    border: none;
+  }
+  .new-place__button:hover{
+    opacity: 0.8;
+  }
+  .new-place__button:focus{
+    outline: none;
+  }
+  @media screen and (max-width: 620px){
+    .new-place__button{
+      font-size: 14px;
+      line-height: 17px;
+      padding: 14px 0 14px;
+      min-width: 200px;
+    }
+  }

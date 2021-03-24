@@ -1,0 +1,18 @@
+.new-place__input{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  max-width: 358px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  color: #000000;
+  margin: 0 0 30px;
+}
+.new-place__input:last-child{
+  margin-bottom: 0;
+}
+.new-place__input:focus{
+  border: 1px solid #39c;
+}

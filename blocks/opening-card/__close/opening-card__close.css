@@ -1,0 +1,23 @@
+.opening-card__close{
+	background-image: url(../../../images/popup__close-icon.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: -45px;
+	right: -45px;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background-color: transparent;
+}
+.opening-card__close:hover{
+	opacity: 0.6;
+}
+@media screen and (max-width: 620px){
+	.opening-card__close{
+		right: 0;
+		width: 26px;
+		height: 26px;
+	}
+}

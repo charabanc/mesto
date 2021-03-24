@@ -1,4 +1,4 @@
-.popup{
+.new-place{
   position: fixed;
   top: 0;
   bottom: 0;
@@ -13,4 +13,3 @@
   height: 0;
   overflow: hidden;
 }
-

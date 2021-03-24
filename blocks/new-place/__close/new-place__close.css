@@ -1,0 +1,23 @@
+.new-place__close{
+	background-image: url(../../../images/popup__close-icon.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: -45px;
+	right: -45px;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background-color: transparent;
+}
+.new-place__close:hover{
+	opacity: 0.6;
+}
+@media screen and (max-width: 620px){
+	.new-place__close{
+		right: 0;
+		width: 26px;
+		height: 26px;
+	}
+}
