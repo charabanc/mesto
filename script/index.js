@@ -1,141 +1,198 @@
+// Общие функции для попапов
+const openPopup = (popup) => {
+  popup.classList.add('popup_opened');
+};
+
+const closePopup = (popup) => {
+  popup.classList.remove('popup_opened');
+};
+
+// Закрываем все попапы
+const closeIcons = document.querySelectorAll('.popup__close-icon');
+
+closeIcons.forEach((currentCloseIcon) => {
+  currentCloseIcon.addEventListener('click', (event) => {
+    const popup = event.target.parentNode.parentNode;
+    closePopup(popup);
+  });
+});
+
+// Изменить информацию профиля
 const buttonEdit = document.querySelector('.profile__btn-edit');
-const popup = document.querySelector('.popup');
-
-const closeIcon = document.querySelector('.popup__close-icon');
-
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
-
+const profilePopup = document.querySelector('.profile-popup');
+const profilePopupForm = profilePopup.querySelector('.profile-popup .popup__form');
 const profileName = document.querySelector('.profile__info-name');
 const profileStatus = document.querySelector('.profile__info-data');
-const formElement = document.querySelector('.popup__container');
 
-function popupOpenedAdd (){
-  popup.classList.add('popup_opened');
+buttonEdit.addEventListener('click', () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileStatus.textContent;
-};
 
-function popupOpenedRemove (){
-  popup.classList.remove('popup_opened');
-};
+  openPopup(profilePopup);
+});
 
-function formSubmitHandler (evt) {
-  evt.preventDefault();
+profilePopupForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
   profileName.textContent = nameInput.value;
   profileStatus.textContent = jobInput.value;
-  popup.classList.remove('popup_opened');
-};
 
-buttonEdit.addEventListener( 'click', popupOpenedAdd);
-closeIcon.addEventListener('click', popupOpenedRemove);
-formElement.addEventListener('submit', formSubmitHandler);
+  closePopup(profilePopup);
+});
+
+// Добавление новой карточки
+const buttonAdd = document.querySelector('.profile__btn-add');
+const cardPopup = document.querySelector('.card-popup');
+const cardPopupForm = document.querySelector('.card-popup form');
+const cardPopupInputName = cardPopupForm.querySelector('.popup__input_type_name');
+const cardPopupInputLink = cardPopupForm.querySelector('.popup__input_type_job');
+
+buttonAdd.addEventListener('click', () => {
+  openPopup(cardPopup);
+});
+
+cardPopupForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  addCard({
+    name: cardPopupInputName.value,
+    link: cardPopupInputLink.value
+  }, true);
+
+  closePopup(cardPopup);
+});
+
 // render cards
-const cards = document.getElementById('cards');
-
-const openingCard = document.querySelector('.opening-card');
-
 const initialCards = [
   {
-    name: 'Карачаевск',
-    link: './images/karachaevsk.jpg'
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
   },
   {
-    name: 'Гора Эльбрус',
-    link: './images/mountainElbrus.jpg'
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
   },
   {
-    name: 'Домбай',
-    link: './images/dombay.jpg'
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
   },
   {
-    name: 'Гора Эльбрус',
-    link: './images/mountainElbrus.jpg'
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
   },
   {
-    name: 'Домбай',
-    link: './images/dombay.jpg'
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
   },
   {
-    name: 'Карачаево-Черкесия',
-    link: './images/karachaevsk.jpg'
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
-]; 
+];
 
-function myRender() {
-  cards.innerHTML = null;
-  initialCards.forEach((currCard) => {
-    const cardDiv = document.createElement("div");
-    cardDiv.classList.add('card');
-    const img = document.createElement("img");
-    cardDiv.innerHTML = `
-      <img src="${currCard.link}" alt="Картинка" class="card__image"></img>
-      <div class="card__item">
-        <h2 class="card__paragraph">${currCard.name}</h2>
-        <button class="card__like" type="button"></button>
-      </div>
-      <button class="card__btn-delete"></button>
-    `;
-  
-    cards.append(cardDiv);
+const placePopup = document.querySelector('.place-popup');
+const placePopupImg = placePopup.querySelector('.popup__image');
+const placePopupTitle = placePopup.querySelector('.popup__paragraph');
 
-    cardDiv.querySelector('.card__btn-delete').addEventListener('click', () => {
-      cardDiv.classList.add('card__delete');
-    });
+function addCard(item, isFirst = false) {
+  const cardTemplate = document.querySelector('#card-template').content;
+  const card = cardTemplate.querySelector('.card').cloneNode(true);
+  const cardImg = card.querySelector('.card__image');
+  const cardTitle = card.querySelector('.card__paragraph');
+  cardImg.src = item.link;
+  cardTitle.textContent = item.name;
+
+  if (isFirst) {
+    cards.prepend(card);
+  } else {
+    cards.append(card);
+  }
+
+  card.querySelector('.card__btn-delete').addEventListener('click', () => {
+    card.classList.add('card__delete');
   });
 
-  document.querySelectorAll('.card__like').forEach(cardLike => 
+  card.querySelectorAll('.card__like').forEach(cardLike => 
     cardLike.addEventListener('click', () => cardLike.classList.toggle('card__like_active'))
   );
 
-  document.querySelectorAll('.card__image').forEach((cardImg) => 
-    cardImg.addEventListener('click', function (event) {
-      const src = event.target.src;
-      const title = event.target.parentElement.querySelector('.card__paragraph').innerText;
+  cardImg.addEventListener('click', (event) => {
+    openPopup(placePopup);
 
-      openingCard.classList.add('opening-card_opened');
+    placePopupImg.src = item.link;
+    placePopupTitle.innerText = item.name;
+  });
+}
 
-      document.querySelector('.opening-card__image').src = src;
-      document.querySelector('.opening-card__title').innerText = title;
-    })
-  );
-
-  document.querySelectorAll('.opening-card__close').forEach((openingClose) => 
-    openingClose.addEventListener('click', () => {
-      openingCard.classList.remove('opening-card_opened');
-    })
-  );
+function myRender(){
+  initialCards.forEach(function(item){
+    addCard(item);
+  }); 
 }
 
 myRender();
 
-const buttonAdd = document.querySelector('.profile__btn-add');
-const newPlace = document.querySelector('.new-place');
-const closeNewPlace = document.querySelector('.new-place__close');
+// Ставить Лайк
+// const cards = document.getElementById('cards');
+// const initialCards = [
+//   {
+//     name: 'Карачаевск',
+//     link: './images/karachaevsk.jpg'
+//   },
+//   {
+//     name: 'Гора Эльбрус',
+//     link: './images/mountainElbrus.jpg'
+//   },
+//   {
+//     name: 'Домбай',
+//     link: './images/dombay.jpg'
+//   },
+//   {
+//     name: 'Гора Эльбрус',
+//     link: './images/mountainElbrus.jpg'
+//   },
+//   {
+//     name: 'Домбай',
+//     link: './images/dombay.jpg'
+//   },
+//   {
+//     name: 'Карачаево-Черкесия',
+//     link: './images/karachaevsk.jpg'
+//   }
+// ]; 
 
-function newPlaceAdd (){
-  newPlace.classList.add('new-place__opened');
-};
-function newPlaceRemove (){
-  newPlace.classList.remove('new-place__opened');
-};
-buttonAdd.addEventListener( 'click', newPlaceAdd);
-closeNewPlace.addEventListener('click', newPlaceRemove);
+// function myRender() {
+//   cards.innerHTML = null;
+//   initialCards.forEach((currCard) => {
+//     const cardDiv = document.createElement("div");
+//     cardDiv.classList.add('card');
+//     const img = document.createElement("img");
+//     cardDiv.innerHTML = `
+//       <img src="${currCard.link}" alt="Картинка" class="card__image"></img>
+//       <div class="card__item">
+//         <h2 class="card__paragraph">${currCard.name}</h2>
+//         <button class="card__like" type="button"></button>
+//       </div>
+//       <button class="card__btn-delete"></button>
+//     `;
+  
+//     cards.append(cardDiv);
 
-const newPlaceNameInput = document.querySelector('.new-place__input.name');
-const newPlaceLinkInput = document.querySelector('.new-place__input.link');
+//     cardDiv.querySelector('.card__btn-delete').addEventListener('click', () => {
+//       cardDiv.classList.add('card__delete');
+//     });
+//   });
 
-newPlace.addEventListener('submit', (event) => {
-  event.preventDefault();
+//   document.querySelectorAll('.card__like').forEach(cardLike => 
+//     cardLike.addEventListener('click', () => cardLike.classList.toggle('card__like_active'))
+//   );
+// }
 
-  initialCards.unshift({
-    name: newPlaceNameInput.value,
-    link: newPlaceLinkInput.value
-  });
+// myRender();
 
-  myRender();
-  newPlaceRemove();
-});
+
 
 
 

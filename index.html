@@ -31,37 +31,48 @@
       </footer>
       </div>
 
-      <section class="popup">
-        <div class="popup__container">
-          <button class="popup__close-icon" type="submit"></button>
-          <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__form" name="edit-profile">
-            <input type="text" class="popup__input popup__input_type_name" name="first-name" placeholder="Имя">
-            <input type="text" class="popup__input popup__input_type_job" name="jon" placeholder="О себе">
-            <button class="popup__button" type="submit">Сохранить</button>
-          </form>
-        </div>
-      </section>
+    <section class="popup profile-popup">
+      <div class="popup__container">
+        <button class="popup__close-icon" type="submit"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" name="edit-profile">
+          <input type="text" class="popup__input popup__input_type_name" name="first-name" placeholder="Имя">
+          <input type="text" class="popup__input popup__input_type_job" name="jon" placeholder="О себе">
+          <button class="popup__button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </section>
 
-      <section class="new-place">
-        <div class="new-place__container">
-          <button class="new-place__close"></button>
-          <h4 class="new-place__title">Новое место</h4>
-          <form class="new-place__form">
-            <input type="text" class="new-place__input name" name="name" placeholder="Название">
-            <input type="text" class="new-place__input link" name="link" placeholder="Ссылка на картинку">
-            <button class="new-place__button" type="submit">Сохранить</button>
-          </form>
-        </div>
-      </section>
+    <section class="popup card-popup">
+      <div class="popup__container">
+        <button class="popup__close-icon" type="submit"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="edit-profile">
+          <input type="text" class="popup__input popup__input_type_name" name="first-name" placeholder="Название">
+          <input type="text" class="popup__input popup__input_type_job" name="jon" placeholder="Ссылка на картинку">
+          <button class="popup__button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </section>
 
-      <section class="opening-card">
-        <div class="opening-card__container">
-          <button class="opening-card__close"></button>
-          <img src="./images/karachaevsk.jpg" alt="картинка" class="opening-card__image">
-          <h5 class="opening-card__title">Карачаевск</h5>
+    <section class="popup place-popup">
+      <div class="place-popup__container">
+        <button class="popup__close-icon" type="submit"></button>
+        <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg' alt="" class="popup__image">
+        <h4 class="popup__paragraph">Dombay</h4>
+      </div>
+    </section>
+
+    <template id="card-template">
+      <div class="card">
+        <img src="" alt="Картинка" class="card__image"></img>
+        <div class="card__item">
+          <h2 class="card__paragraph"></h2>
+          <button class="card__like" type="button"></button>
         </div>
-      </section>
+        <button class="card__btn-delete"></button>
+      </div>
+    </template>
 
     <script src="./script/index.js"></script>
   </body>
