@@ -56,7 +56,7 @@ buttonAdd.addEventListener('click', () => {
 cardPopupForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  addCard({
+  createCard({
     name: cardPopupInputName.value,
     link: cardPopupInputLink.value
   }, true);
@@ -95,15 +95,19 @@ const initialCards = [
 const placePopup = document.querySelector('.place-popup');
 const placePopupImg = placePopup.querySelector('.popup__image');
 const placePopupTitle = placePopup.querySelector('.popup__paragraph');
+const cards = document.querySelector('#cards');
 
-function addCard(item, isFirst = false) {
+function createCard(item, isFirst = false){
   const cardTemplate = document.querySelector('#card-template').content;
   const card = cardTemplate.querySelector('.card').cloneNode(true);
   const cardImg = card.querySelector('.card__image');
   const cardTitle = card.querySelector('.card__paragraph');
   cardImg.src = item.link;
   cardTitle.textContent = item.name;
-
+  
+  addCard(isFirst,card,cardImg);
+};
+function addCard(isFirst,card,cardImg) {
   if (isFirst) {
     cards.prepend(card);
   } else {
@@ -128,7 +132,7 @@ function addCard(item, isFirst = false) {
 
 function myRender(){
   initialCards.forEach(function(item){
-    addCard(item);
+    createCard(item);
   }); 
 }
 
