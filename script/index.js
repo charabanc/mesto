@@ -56,7 +56,7 @@ buttonAdd.addEventListener('click', () => {
 cardPopupForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  createCard({
+  addCard({
     name: cardPopupInputName.value,
     link: cardPopupInputLink.value
   }, true);
@@ -97,22 +97,14 @@ const placePopupImg = placePopup.querySelector('.popup__image');
 const placePopupTitle = placePopup.querySelector('.popup__paragraph');
 const cards = document.querySelector('#cards');
 
-function createCard(item, isFirst = false){
+function createCard(item) {
   const cardTemplate = document.querySelector('#card-template').content;
   const card = cardTemplate.querySelector('.card').cloneNode(true);
   const cardImg = card.querySelector('.card__image');
   const cardTitle = card.querySelector('.card__paragraph');
+  
   cardImg.src = item.link;
   cardTitle.textContent = item.name;
-  
-  addCard(isFirst,card,cardImg);
-};
-function addCard(isFirst,card,cardImg) {
-  if (isFirst) {
-    cards.prepend(card);
-  } else {
-    cards.append(card);
-  }
 
   card.querySelector('.card__btn-delete').addEventListener('click', () => {
     card.classList.add('card__delete');
@@ -128,11 +120,23 @@ function addCard(isFirst,card,cardImg) {
     placePopupImg.src = item.link;
     placePopupTitle.innerText = item.name;
   });
+  
+  return card;
+};
+
+function addCard(item, isFirst = false) {
+  const card = createCard(item);
+
+  if (isFirst) {
+    cards.prepend(card);
+  } else {
+    cards.append(card);
+  }
 }
 
 function myRender(){
   initialCards.forEach(function(item){
-    createCard(item);
+    addCard(item);
   }); 
 }
 
